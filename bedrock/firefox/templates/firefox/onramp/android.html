@@ -4,10 +4,10 @@
 
 {% extends "firefox/base-resp.html" %}
 
-{% set_lang_files "firefox/hello" %}
+{% set_lang_files "firefox/onramp" %}
 
 {% block page_title_prefix %}{% endblock %}
-{% block page_title %}{{ _('Firefox Onramp — Everything you need to hack on the Firefox codebase.') }}{% endblock %}
+{% block page_title %}{{ _('Firefox Onramp — The fast way to get involved with the Firefox codebase.') }}{% endblock %}
 {% block page_desc %}{{ _('Get set up with all tools you need to get involved in the Firefox codebase.') }}{% endblock %}
 {% block body_id %}firefox-onramp{% endblock %}
 
@@ -23,35 +23,75 @@
     <div class="container">
       {#-- No-JS/IE fallback image --#}
       <h2 id="intro-image">{{ _('Firefox Onramp') }}</h2>
-
-      <h1 class="heading-primary">{{ _('Change the code.') }}</h1>
-      <h1 class="heading-primary">{{ _('Change the world.') }}</h1>
+      <h1 class="heading-primary">{{ _('Fennec: Firefox on Android.') }}</h1>
       <h2 class="heading-tertiary">
-        {{ _('It has never been easier to get involved with the Mozilla codebase.') }}
-        {{ _('An hour from now, you can be building the future with us.') }}
-        {{ _('Choose your platform:') }}
+        {{ _('Help us build the world’s best browser for the world’s most popular mobile OS.') }}
       </h2>
     </div>{# /.container #}
   </section>
-  <section id="features">
+  <section id="step1">
     <div class="container">
       <ul>
-        <li id="feature-invite">
-          <h3 class="heading-tertiary">{{ _('Firefox for the Desktop') }}</h3>
+          <h3 class="heading-tertiary">{{ _('Let’s get set up.') }}</h3>
           <p>
-            {{ _('Desktop Firefox for Windows, OSX or Linux users is our most popular product.') }}
-            {{ _('Start here to help us build the tools that keep teh Web free and open for  hundreds of millions of people.') }}
-          </p>
-        <li id="feature-simple">
-         <h3 class="heading-tertiary">{{ _('Firefox for Android') }}</h3>
-          <p>
-            {{ _('Firefox for Android is the best browser for the worlds most popular mobile OS.') }}
-            {{ _('Click here to help put the power of the open Web in everybodys pocket.') }}
-          </p>
-        </li>
+            {{ _('To start hacking on Fennec you’ll need two things.') }}
+            <ul>
+                <li>{{ _('A computer running Linux or OSX, and') }}</li>
+	              <li>{{ _('An Android device to test it on.') }}</li>
+                <li>{{ _('A fast internet connection.') }}</li>  
+            </ul>
+            <p>{{ _('The computer needs to be running a 64-bit Unix-based OS.') }}
+               {{ _('Unfortunately Fennec development on Windows is unsupported.')}}
+               {{ _('You can make sure your OS is 64-bit by opening a terminal window, typing:') }}</p>
+	          <p>{{ _('<code>uname -m</code>') }}</p> 
+            <p>{{ _('... and hitting enter. If you see <code>x86_64</code> your computer is ready to go.') }}</p>
+            <p>{{ _('Fennec will run almost all Android phones made in the last three to four years.') }}
+            <p>{{ _('If you have your phone and computer with you, let’s get started!') }}</p>
       </ul>
     </div>{# /.container #}
   </section>
+
+ <section id="step2">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Setting up your Android device.') }}</h3>
+          <p>{{ _('Getting your Android device ready for development is fast and easy.:') }}
+          {{ _('In the Settings menu, choose "About" and scroll down to the Build Number option.') }}</p>
+          <p>{{ _('Now: tap the Build Number option seven times.') }}
+             {{ _('You’ll see a countdown, and then a "Developer Options" menu will appear in your Settings.') }}</p>
+          <p>{{ _('Don’t worry - you can turn this off whenever you like.') }}
+             {{ _('The last step is to enable USB Debugging in the Developer Options menu.') }}</p>
+          </p>
+    </div>{# /.container #}
+  </section>
+
+ <section id="step3">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Setting up your computer.') }}</h3>
+          <p>{{ _('Getting your computer set up is simple, but some of the steps can take a while.') }}</p>
+          <p>{{ _('Note that we need to download a lot of data during this process, so please be cautious about following these instructions on a slow or metered connection.') }}</p>  
+              <ul>
+                  <li>{{ _('Start by opening a terminal window in your home directory.') }}</li>  
+                  <li>{{ _('Create a <code>src/</code> directory, where we’ll put our work.') }}</li>
+                  <li>{{ _('Next, download <a href="https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py">Bootstrap.py</a> and save it to your <code>src/</code> directory') }}</li>    
+                  <li>{{ _('Now, in your <code>src/</code> dir, run that file with <code>python bootstrap.py</code>.') }}</li>
+              <ul>
+          <p>{{ _('... and choose "Firefox for Android" at the prompts. The script will take care of the rest.') }}  
+          {{ _('If you want to know more about what Bootstrap.py is doing you can look at our <a href="https://wiki.mozilla.org/Mobile/Fennec/Android/Detailed_build_instructions">detailed setup instructions</a>.') }}</p>  
+    </div>{# /.container #}
+  </section>
+
+ <section id="step4">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Setting yourself up!') }}</h3>
+          <p>{{ _('That last step can take some time. While it’s finishing, take a moment to sign up for a Bugzilla account!') }}</p>  
+          <p>{{ _('<a href="https://bugzilla.mozilla.org/">Bugzilla.mozilla.org</a> is Mozilla’s issue tracker.') }}</p>  
+          <p>{{ _('To comment on a bug or submit a patch you’ll need a Bugzilla account, so <a target="_blank" href="https://bugzilla.mozilla.org/createaccount.cgi">sign up for one now!</a>') }}</p>  
+    </div>{# /.container #}
+  </section>
+
+
+
+
 
 
 
