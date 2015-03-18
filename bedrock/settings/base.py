@@ -513,6 +513,16 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_hello-bundle.css',
     },
+    'firefox_onramp': {
+        'source_filenames': (
+            'css/sandstone/sandstone-resp.less',
+            'css/firefox/menu-resp.less',
+            'css/base/mozilla-modal.less',
+            'css/base/mozilla-share-cta.less',
+            'css/firefox/onramp/index.less',
+        ),
+    'output_filename': 'css/firefox_onramp-bundle.css',
+    },
     'firefox_new': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',

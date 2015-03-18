@@ -1,0 +1,60 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "firefox/base-resp.html" %}
+
+{% set_lang_files "firefox/onramp" %}
+
+{% block page_title_prefix %}{% endblock %}
+{% block page_title %}{{ _('Firefox Onramp — Everything you need to hack on the Firefox codebase.') }}{% endblock %}
+{% block page_desc %}{{ _('Get set up with all tools you need to get involved in the Firefox codebase.') }}{% endblock %}
+{% block body_id %}firefox-onramp{% endblock %}
+
+{% block site_css %}
+  {% stylesheet 'firefox_onramp' %}
+{% endblock %}
+
+
+{% block content %}
+
+<main role="main">
+  <section id="intro">
+    <div class="container">
+      {#-- No-JS/IE fallback image --#}
+      <h2 id="intro-image">{{ _('Firefox Onramp') }}</h2>
+
+      <h1 class="heading-primary">{{ _('You’re on the way.') }}</h1>
+      <h2 class="heading-tertiary">
+        {{ _('Your development environment depends on your operating system.') }}<br/>
+        {{ _('Choose your platform:') }}
+      </h2>
+    </div>{# /.container #}
+  </section>
+  <section id="features">
+    <div class="container">
+      <ul>
+        <li id="feature-invite">
+          <h3 class="heading-tertiary">{{ _('I use Windows') }}</h3>
+          <p>
+            {{ _('You need 2GB of RAM, build Firefox on Windows ') }}
+            {{ _('help us build the tools that keep teh Web free and open for  hundreds of millions of people.') }}
+          </p>
+        <li id="feature-simple">
+         <h3 class="heading-tertiary">{{ _('Firefox for Android') }}</h3>
+          <p>
+            {{ _('Firefox for Android is the best browser for the worlds most popular mobile OS.') }}
+            {{ _('Click here to help put the power of the open Web in everybodys pocket.') }}
+          </p>
+        </li>
+      </ul>
+    </div>{# /.container #}
+  </section>
+
+
+
+</main>
+
+{% endblock %}
+
+{% block email_form %}{% endblock %}

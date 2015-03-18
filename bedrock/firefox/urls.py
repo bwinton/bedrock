@@ -76,6 +76,14 @@ urlpatterns = patterns('',
     url('^firefox/os/$', views.firefox_os_index, name='firefox.os.index'),
     page('firefox/os/releases', 'firefox/os/releases.html'),
 
+    # Firefox Onramp.
+    page('firefox/onramp','firefox/onramp/onramp.html'),
+    page('firefox/onramp/desktop', 'firefox/onramp/desktop.html'),
+    page('firefox/onramp/android', 'firefox/onramp/android.html'),
+    page('firefox/onramp/desktop/win', 'firefox/onramp/desktop-windows.html'),
+    page('firefox/onramp/desktop/osx', 'firefox/onramp/desktop-osx.html'),
+    page('firefox/onramp/desktop/linux', 'firefox/onramp/desktop-linux.html'),
+ 
     page('mwc', 'firefox/os/mwc-2015-preview.html',
         decorators=waffle_switch('mwc-2015-preview')),
 
