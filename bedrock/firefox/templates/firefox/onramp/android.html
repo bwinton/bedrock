@@ -32,11 +32,10 @@
   <section id="step1">
     <div class="container">
       <ul>
-          <h3 class="heading-tertiary">{{ _('Let’s get set up.') }}</h3>
-          <p>
-            {{ _('To start hacking on Fennec you’ll need two things.') }}
+          <h3 class="heading-tertiary">{{ _('Let’s get started.') }}</h3>
+          <p>{{ _('To start hacking on Fennec you’ll need three things:') }}</p>
             <ul>
-                <li>{{ _('A computer running Linux or OSX, and') }}</li>
+                <li>{{ _('A computer running Linux or OSX with 30Gb of free space, and') }}</li>
 	              <li>{{ _('An Android device to test it on.') }}</li>
                 <li>{{ _('A fast internet connection.') }}</li>  
             </ul>
@@ -46,7 +45,8 @@
 	          <p>{{ _('<code>uname -m</code>') }}</p> 
             <p>{{ _('... and hitting enter. If you see <code>x86_64</code> your computer is ready to go.') }}</p>
             <p>{{ _('Fennec will run almost all Android phones made in the last three to four years.') }}
-            <p>{{ _('If you have your phone and computer with you, let’s get started!') }}</p>
+               {{ _('Older phones - those using ARMv6 chips or earlier - won’t work, but any recent phone will.') }}</p>  
+            <p>{{ _('If you have your phone and computer to hand, let’s get started!') }}</p>
       </ul>
     </div>{# /.container #}
   </section>
@@ -84,8 +84,57 @@
     <div class="container">
           <h3 class="heading-tertiary">{{ _('Setting yourself up!') }}</h3>
           <p>{{ _('That last step can take some time. While it’s finishing, take a moment to sign up for a Bugzilla account!') }}</p>  
-          <p>{{ _('<a href="https://bugzilla.mozilla.org/">Bugzilla.mozilla.org</a> is Mozilla’s issue tracker.') }}</p>  
-          <p>{{ _('To comment on a bug or submit a patch you’ll need a Bugzilla account, so <a target="_blank" href="https://bugzilla.mozilla.org/createaccount.cgi">sign up for one now!</a>') }}</p>  
+          <p>{{ _('<a href="https://bugzilla.mozilla.org/">Bugzilla.mozilla.org</a> is Mozilla’s issue tracker.') }}
+             {{ _('To comment on a bug or submit a patch you’ll need a Bugzilla account, so <a target="_blank" href="https://bugzilla.mozilla.org/createaccount.cgi">sign up for one now!</a>') }}</p>
+          <p>{{ _('As well as Bugzilla, much of Mozilla’s internal communication happens over IRC.') }}
+             {{ _('You can <a href="http://limechat.net/mac/">download Limechat here</a>, and learn how to <a href="https://wiki.mozilla.org/IRC">connect to Mozilla with IRC here</a>.') }}
+             {{ _('If you’re just getting started or have questions about getting set up you can join us in the #introduction channel, where some of our community members hang out to try and help new contributors get rolling.') }}</p>     
+    </div>{# /.container #}
+  </section>
+
+  <section id="step5">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Getting the source.') }}</h3>
+          <p>{{ _('This is the last big step. In a terminal, in your <code>src/</code> directory, enter:') }}</p>  
+          <p>{{ _('<code>hg clone http://hg.mozilla.org/mozilla-central/</code>' ) }}</p>  
+          <p>{{ _('... and enter. This step uses mercurial to pull down the Firefox for Android source code from Mozilla-Central.') }}
+             {{ _('<code>hg</code> is the chemical symbol for mercury, if you’re wondering.') }}</p> 
+          <p>{{ _('While you’re waiting for that process to finish, take a look at <a target="_blank" href="http://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html">our Mercurial documentation</a>.') }}</p>   
+          <p>{{ _('It explains how we use version control at Mozilla to manage our code and land changes to our source tree.') }}</p>  
+    </div>{# /.container #}
+  </section>
+
+ <section id="step6">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Starting your first build!') }}</h3>
+          <p>{{ _('Now we tie it all together. In your terminal window, <code>cd</code> to your source directory and type') }}</p>  
+          <p>{{ _('<code>mach build</code>.') }}</p>
+          <p>{{ _('You’re on your way. Don’t be discouraged if this takes a while;') }}
+             {{ _('this takes some time on even the fastest modern machines,') }}
+             {{ _('and as much as two hours or more on older hardware.') }}</p>
+    </div>{# /.container #}
+  </section>
+
+
+ <section id="step7">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Join Mozillians.org!') }}</h3>
+          <p>{{ _('There’s one more thing you can do for yourself while you’re waiting:') }}
+             {{ _('create an account for yourself on <a href="https://mozillians.org/">Mozillians</a>.') }}
+             {{ _('Mozillians is the Mozilla community directory, where you can connect with people who share your interests,') }}
+             {{ _('projects or countries. This step is optional, but we think it will be worth your while.') }}         
+    </div>{# /.container #}
+  </section>
+
+
+ <section id="laststep">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Your browser, your phone and you’re ready.') }}</h3>
+          <p>{{ _('Let's tie it all together. Make sure your phone is plugged in, and run these last two commands:') }}</p>
+          <p>{{ _('<code>mach package</code>.') }}
+             {{ _('<code>mach install</code>.') }}</p>
+          <p>
+
     </div>{# /.container #}
   </section>
 
