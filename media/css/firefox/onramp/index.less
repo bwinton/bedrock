@@ -75,29 +75,6 @@ main {
     line-height: 1.2;
 }
 
-.try-hello {
-    display: none;
-    text-align: center;
-    .border-radius(6px);
-    text-transform: uppercase;
-    .font-size(@baseFontSize);
-    font-weight: bold;
-    padding: 16px 4px;
-    cursor: pointer;
-    .transition(all 0.3s ease);
-
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-// Share
-
-#hello-header-nav,
-#hello-logo-wrapper {
-    .clearfix();
-}
-
 // Intro
 
 #intro {
@@ -111,22 +88,6 @@ main {
         text-align: center;
     }
 
-    .try-hello {
-        width: 220px;
-        border: 2px solid #a9bcca;
-        background: transparent;
-        color: #00a0db;
-        margin: (@baseLine * 1.5) auto 0;
-
-        &:hover {
-            background: #fff;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        &.active {
-            display: block;
-        }
-    }
 }
 
 #intro-image {
@@ -265,58 +226,6 @@ html[lang^="en"] #powered-by {
         height: 314px;
         z-index: 2;
         opacity: 0;
-    }
-
-    #hello-panel {
-        top: 68px;
-        right: 20px;
-        background: #fff;
-        width: 214px;
-        height: 140px;
-        z-index: 1;
-        .transform(scale(1, 0));
-        .transform-origin(top center);
-
-        // top triangle
-        &:before {
-            position: absolute;
-            top: -10px;
-            right: 41px;
-            content: '';
-            display: block;
-            border-style: solid;
-            border-width: 0 9px 10px 9px;
-            border-color: transparent transparent #fff transparent;
-        }
-    }
-
-    #hello-panel-contents {
-        width: 164px;
-        height: 80px;
-        top: 25px;
-        left: 25px;
-
-        div {
-            position: relative;
-        }
-    }
-
-    .hello-panel-text {
-        margin-bottom: 6px;
-        width: 100%;
-        height: 12px;
-        background: #70879A;
-
-        &.last {
-            width: 80%;
-        }
-    }
-
-    #hello-panel-button {
-        height: 30px;
-        background: #00B7E2;
-        width: 100%;
-        margin-top: 12px;
     }
 
     .chat-window {
@@ -520,15 +429,6 @@ html[lang^="en"] #powered-by {
             .animation(@animations);
         }
 
-        #hello-panel {
-            @animations: hello-panel-in 0.3s ease forwards 2.8s,
-                         hello-panel-out 0.3s ease forwards 3.6s;
-            .animation(@animations);
-        }
-
-        #hello-panel-button {
-            .animation(hello-panel-button-in 0.2s ease forwards 3.25s);
-        }
 
         #chat-window-green {
             @animations: chat-window-green-in 0.4s ease forwards 3.5s,
@@ -780,48 +680,6 @@ html[lang^="en"] #powered-by {
     }
 }
 
-@-webkit-keyframes hello-panel-in {
-    0% {
-        .transform(scale(1, 0));
-    }
-    100% {
-        .transform(scale(1, 1));
-    }
-}
-
-@keyframes hello-panel-in {
-    0% {
-        .transform(scale(1, 0));
-    }
-    100% {
-        .transform(scale(1, 1));
-    }
-}
-
-@-webkit-keyframes hello-panel-button-in {
-    0% {
-        .transform(scale(1));
-    }
-    75% {
-        .transform(scale(1.25));
-    }
-    100% {
-        .transform(scale(1));
-    }
-}
-
-@keyframes hello-panel-button-in {
-    0% {
-        .transform(scale(1));
-    }
-    75% {
-        .transform(scale(1.25));
-    }
-    100% {
-        .transform(scale(1));
-    }
-}
-
 @-webkit-keyframes chat-window-green-in {
     0% {
         .transform(scale(0));
@@ -891,24 +749,6 @@ html[lang^="en"] #powered-by {
     }
     100% {
         .transform(scale(0.5));
-    }
-}
-
-@-webkit-keyframes hello-panel-out {
-    0% {
-        .transform(scale(1));
-    }
-    100% {
-        .transform(scale(1, 0));
-    }
-}
-
-@keyframes hello-panel-out {
-    0% {
-        .transform(scale(1));
-    }
-    100% {
-        .transform(scale(1, 0));
     }
 }
 
@@ -1276,18 +1116,13 @@ html[lang^="en"] #powered-by {
 
 // default to showing only non-fx copy/cta
 #ctacopy-oldfx,
-#ctacopy-ios,
-#ctacopy-hellofx {
+#ctacopy-ios {
     display: none;
 }
 
 // show ctacopy-ios if body class matches
 .ios #ctacopy-ios {
     display: block;
-}
-
-#try-hello-footer {
-    display: none;
 }
 
 /****************************************************************************/
@@ -1455,10 +1290,6 @@ html[lang^="en"] #powered-by {
         .heading-primary,
         .heading-tertiary {
             width: auto;
-        }
-
-        .try-hello {
-            margin-bottom: @baseLine;
         }
     }
 
@@ -1796,11 +1627,6 @@ html[lang^="en"] #powered-by {
         .cta-wrapper {
             padding-top: 0;
         }
-
-        .try-hello {
-            margin: 0 auto;
-        }
-    }
 
     // Video
 
