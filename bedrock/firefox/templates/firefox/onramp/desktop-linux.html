@@ -4,10 +4,10 @@
 
 {% extends "firefox/base-resp.html" %}
 
-{% set_lang_files "firefox/hello" %}
+{% set_lang_files "firefox/onramp" %}
 
 {% block page_title_prefix %}{% endblock %}
-{% block page_title %}{{ _('Firefox Onramp — Everything you need to hack on the Firefox codebase.') }}{% endblock %}
+{% block page_title %}{{ _('Firefox Onramp — The fast way to get involved with the Firefox codebase.') }}{% endblock %}
 {% block page_desc %}{{ _('Get set up with all tools you need to get involved in the Firefox codebase.') }}{% endblock %}
 {% block body_id %}firefox-onramp{% endblock %}
 
@@ -23,35 +23,104 @@
     <div class="container">
       {#-- No-JS/IE fallback image --#}
       <h2 id="intro-image">{{ _('Firefox Onramp') }}</h2>
-
-      <h1 class="heading-primary">{{ _('Change the code.') }}</h1>
-      <h1 class="heading-primary">{{ _('Change the world.') }}</h1>
+      <h1 class="heading-primary">{{ _('Firefox on Linux.') }}</h1>
       <h2 class="heading-tertiary">
-        {{ _('It has never been easier to get involved with the Mozilla codebase.') }}
-        {{ _('An hour from now, you can be building the future with us.') }}
-        {{ _('Choose your platform:') }}
+        {{ _('Help us keep the web free and open for the people using world’s most popular free, open OS.') }}
       </h2>
     </div>{# /.container #}
   </section>
-  <section id="features">
+  <section id="step1">
     <div class="container">
       <ul>
-        <li id="feature-invite">
-          <h3 class="heading-tertiary">{{ _('Firefox for the Desktop') }}</h3>
-          <p>
-            {{ _('Desktop Firefox for Windows, OSX or Linux users is our most popular product.') }}
-            {{ _('Start here to help us build the tools that keep teh Web free and open for  hundreds of millions of people.') }}
-          </p>
-        <li id="feature-simple">
-         <h3 class="heading-tertiary">{{ _('Firefox for Android') }}</h3>
-          <p>
-            {{ _('Firefox for Android is the best browser for the worlds most popular mobile OS.') }}
-            {{ _('Click here to help put the power of the open Web in everybodys pocket.') }}
-          </p>
-        </li>
+          <h3 class="heading-tertiary">{{ _('Getting Ready') }}</h3>
+          <p>{{ _('They aren’t complicated, but there are a few prerequisites to building Firefox on Linux. You need:'}}</p>
+            <ul>
+                <li>{{ _('A 64-bit installation of Linux. You can check by opening a terminal window; if <code>uname -m</code> returns <code>x86_64</code> you can proceed.') }}</li>
+                <li>{{ _('Next, you’ll need Python installed. You can check with <code>python --version</code> to see if you have it already.') }} 
+                    {{ _('If not, you can install it with your distribution’s package manager. Make sure your system is up to date!') }}</li>
+                <li>{{ _('Finally, internet connection and 30GB of free disk space.') }}</li>  
+            </ul>
+            <p>{{ _('If you have all that, let’s get started!') }}</p>
       </ul>
     </div>{# /.container #}
   </section>
+
+ <section id="step2">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Getting Started.') }}</h3>
+          <p>{{ _('Getting set up on Linux is fast and easy.') }}</p>
+          <p>{{ _('If you don’t have one yet, create a "src" directory for yourself under your home directory: <code>cd && mkdir src</code>') }}
+          <p>{{ _('Next <a href="https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py">download the bootstrap.py script</a> and save it in your <code>src/</code> directory.') }}</p>
+          <p>{{ _('And finally, in your terminal: <code>cd ~/src</code> and start the bootstrapper like this: <code>python bootstrap.py</code>') }}</p>
+          <p>{{ _('... follow the prompts.') }}</p>
+    </div>{# /.container #}
+  </section>
+
+ <section id="step3">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Getting Access') }}</h3>
+          <p>{{ _('That last step can take some time. While it’s running, take a moment to sign into Bugzilla.') }}</p>  
+          <p>{{ _('<a href="https://bugzilla.mozilla.org/">Bugzilla.mozilla.org</a> is Mozilla’s issue tracker.') }}
+             {{ _('To comment on a bug or submit a patch you’ll need a Bugzilla account. You can either use your <a href="https://github.com">GitHub account</a>,') }}
+             {{ _('or you can <a target="_blank" href="https://bugzilla.mozilla.org/createaccount.cgi">sign up for a Bugzilla account here.</a>') }}</p>
+          <p>{{ _('As well as Bugzilla, much of Mozilla’s internal communication happens over IRC.') }}
+             {{ _('You can <a href="http://limechat.net/mac/">download Limechat here</a>, and learn how to <a href="https://wiki.mozilla.org/IRC">connect to Mozilla with IRC here</a>.') }}
+             {{ _('If you’re just getting started or have questions about getting set up you can join us in the #introduction channel, where some of our community members hang out to try and help new contributors get rolling.') }}</p>     
+    </div>{# /.container #}
+  </section>
+
+  <section id="step4">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Get The Code') }}</h3>
+          <p>{{ _('This is the last big step. In a terminal, in your <code>src/</code> directory, enter:') }}</p>  
+          <p>{{ _('<code>hg clone http://hg.mozilla.org/mozilla-central/</code>' ) }}</p>  
+          <p>{{ _('... and enter. This step uses mercurial to pull down the Firefox source code from Mozilla-Central.') }}
+             {{ _('<code>hg</code> is the chemical symbol for mercury, if you’re wondering.') }}</p> 
+          <p>{{ _('While you’re waiting for that to finish, take a look at <a target="_blank" href="http://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html">our Mercurial documentation</a>.') }}</p>   
+          <p>{{ _('It explains how we use version control at Mozilla to manage our code and land changes to our source tree.') }}</p>  
+    </div>{# /.container #}
+  </section>
+
+ <section id="step5">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Let’s Build Firefox') }}</h3>
+          <p>{{ _('You’re ready; now we can tie it all together. In your terminal:') }}</p> 
+          <ul>
+              <li>{{ _('<code>cd mozilla-central</code> and then') }}</li>
+              <li><{{ _('code>./mach build</code>') }}</li>
+          </ul>
+          <p>{{ _('And you’re on your way, building your own copy of Firefox from source.') }} </p>
+          <p>{{ _('Don’t be discouraged if this takes a while;') }}
+             {{ _('this takes some time on even the fastest modern machines,') }}
+             {{ _('and as much as two hours or more on older hardware.') }}</p>
+    </div>{# /.container #}
+  </section>
+
+ <section id="step6">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Join Mozillians.org!') }}</h3>
+          <p>{{ _('There’s one more thing you can do for yourself while you’re waiting:') }}
+             {{ _('create an account for yourself on <a href="https://mozillians.org/">Mozillians</a>.') }}
+             {{ _('Mozillians is the Mozilla community directory, where you can connect with people who share your interests,') }}
+             {{ _('projects or countries. This step is optional, but we think it will be worth your while.') }}         
+    </div>{# /.container #}
+  </section>
+
+
+ <section id="laststep">
+    <div class="container">
+          <h3 class="heading-tertiary">{{ _('Fire it up!') }}</h3>
+          <p>{{ _('Let's tie it all together. Make sure your phone is plugged in, and run these last two commands:') }}</p>
+          <p>{{ _('<code>mach package</code>.') }}
+             {{ _('<code>mach install</code>.') }}</p>
+          <p>
+
+    </div>{# /.container #}
+  </section>
+
+
+
+
 
 
 
