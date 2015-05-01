@@ -83,7 +83,7 @@ urlpatterns = patterns('',
     page('firefox/onramp/desktop/win', 'firefox/onramp/desktop-windows.html'),
     page('firefox/onramp/desktop/osx', 'firefox/onramp/desktop-osx.html'),
     page('firefox/onramp/desktop/linux', 'firefox/onramp/desktop-linux.html'),
- 
+
     page('mwc', 'firefox/os/mwc-2015-preview.html',
         decorators=waffle_switch('mwc-2015-preview')),
 
