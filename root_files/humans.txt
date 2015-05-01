@@ -85,6 +85,8 @@ Developers: utkbansal
 Developers: pollti
 Developers: lismanb
 Developers: kenrick95
+Developers: mhoye
+Developers: bwinton
 
 Localizers on SVN
 Localize: akilaa@wippies.fi
